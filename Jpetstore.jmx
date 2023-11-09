@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain"></stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol"></stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1370726934000</longProp>
+        <longProp name="ThreadGroup.end_time">1370726934000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Launch" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="-36" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">petstore.octoperf.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/actions/Catalog.action</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">navigate</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.google.com/</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">cross-site</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-User" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                  <stringProp name="Header.value">?1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Google Chrome&quot;;v=&quot;119&quot;, &quot;Chromium&quot;;v=&quot;119&quot;, &quot;Not?A_Brand&quot;;v=&quot;24&quot;</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                  <stringProp name="Header.value">document</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="search" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="-44" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="keyword" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">keyword</stringProp>
+                  <stringProp name="Argument.value">fish</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="searchProducts" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">searchProducts</stringProp>
+                  <stringProp name="Argument.value">Search</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="_sourcePage" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">_sourcePage</stringProp>
+                  <stringProp name="Argument.value">bia5rk32OWdUF8NBJiJPU2yxyGUm1Fz2VTbJMjimyjeD34teFeegMflnytd_1JGmACZWMnFmx_8Ap3BIhKIxStS0YDCsjcag</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="__fp" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">__fp</stringProp>
+                  <stringProp name="Argument.value">PstvwLNAY1ygaHM13DCjFkENWn1Qet91zGDbyKDlwK1Ln0PrJwtiLCvkFtWhlS_L</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">petstore.octoperf.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/actions/Catalog.action;jsessionid=9E3425F1C011DADD5750FC9F6DB7EBFC</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">navigate</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://petstore.octoperf.com/actions/Catalog.action</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://petstore.octoperf.com</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-User" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                  <stringProp name="Header.value">?1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Google Chrome&quot;;v=&quot;119&quot;, &quot;Chromium&quot;;v=&quot;119&quot;, &quot;Not?A_Brand&quot;;v=&quot;24&quot;</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">max-age=0</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                  <stringProp name="Header.value">document</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">productId</stringProp>
+              <stringProp name="RegexExtractor.regex">productId=(.*?)&quot;&gt;&lt;image</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">productId not found</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor" enabled="false">
+              <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+              <stringProp name="BoundaryExtractor.refname"></stringProp>
+              <stringProp name="BoundaryExtractor.lboundary"></stringProp>
+              <stringProp name="BoundaryExtractor.rboundary"></stringProp>
+              <stringProp name="BoundaryExtractor.default"></stringProp>
+              <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+              <stringProp name="BoundaryExtractor.match_number"></stringProp>
+            </BoundaryExtractor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Fresh Fish Product" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="-56" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;entries&quot;:[{&quot;failure_data&quot;:{&quot;custom_error&quot;:&quot;net::ERR_ABORTED&quot;},&quot;network_changed&quot;:false,&quot;protocol&quot;:&quot;&quot;,&quot;request_age_ms&quot;:79675,&quot;request_elapsed_ms&quot;:319,&quot;sample_rate&quot;:1.0,&quot;server_ip&quot;:&quot;&quot;,&quot;status&quot;:&quot;aborted&quot;,&quot;url&quot;:&quot;https://www.google.com/&quot;,&quot;was_proxied&quot;:false},{&quot;failure_data&quot;:{&quot;custom_error&quot;:&quot;net::ERR_ABORTED&quot;},&quot;network_changed&quot;:false,&quot;protocol&quot;:&quot;&quot;,&quot;request_age_ms&quot;:79358,&quot;request_elapsed_ms&quot;:127,&quot;sample_rate&quot;:1.0,&quot;server_ip&quot;:&quot;&quot;,&quot;status&quot;:&quot;aborted&quot;,&quot;url&quot;:&quot;https://www.google.com/&quot;,&quot;was_proxied&quot;:false},{&quot;http_response_code&quot;:200,&quot;network_changed&quot;:false,&quot;protocol&quot;:&quot;HTTPS&quot;,&quot;request_age_ms&quot;:80489,&quot;request_elapsed_ms&quot;:1286,&quot;sample_rate&quot;:0.05,&quot;server_ip&quot;:&quot;[::1]:8888&quot;,&quot;status&quot;:&quot;ok&quot;,&quot;url&quot;:&quot;https://www.google.com/&quot;,&quot;was_proxied&quot;:true},{&quot;http_response_code&quot;:200,&quot;network_changed&quot;:false,&quot;protocol&quot;:&quot;HTTPS&quot;,&quot;request_age_ms&quot;:80269,&quot;request_elapsed_ms&quot;:1071,&quot;sample_rate&quot;:0.05,&quot;server_ip&quot;:&quot;[::1]:8888&quot;,&quot;status&quot;:&quot;ok&quot;,&quot;url&quot;:&quot;https://www.google.com/&quot;,&quot;was_proxied&quot;:true},{&quot;failure_data&quot;:{&quot;custom_error&quot;:&quot;net::ERR_ABORTED&quot;},&quot;network_changed&quot;:false,&quot;protocol&quot;:&quot;&quot;,&quot;request_age_ms&quot;:79231,&quot;request_elapsed_ms&quot;:230,&quot;sample_rate&quot;:1.0,&quot;server_ip&quot;:&quot;&quot;,&quot;status&quot;:&quot;aborted&quot;,&quot;url&quot;:&quot;https://www.google.com/&quot;,&quot;was_proxied&quot;:false},{&quot;failure_data&quot;:{&quot;custom_error&quot;:&quot;net::ERR_ABORTED&quot;},&quot;network_changed&quot;:false,&quot;protocol&quot;:&quot;&quot;,&quot;request_age_ms&quot;:79000,&quot;request_elapsed_ms&quot;:205,&quot;sample_rate&quot;:1.0,&quot;server_ip&quot;:&quot;&quot;,&quot;status&quot;:&quot;aborted&quot;,&quot;url&quot;:&quot;https://www.google.com/&quot;,&quot;was_proxied&quot;:false},{&quot;failure_data&quot;:{&quot;custom_error&quot;:&quot;net::ERR_ABORTED&quot;},&quot;network_changed&quot;:false,&quot;protocol&quot;:&quot;&quot;,&quot;request_age_ms&quot;:78794,&quot;request_elapsed_ms&quot;:199,&quot;sample_rate&quot;:1.0,&quot;server_ip&quot;:&quot;&quot;,&quot;status&quot;:&quot;aborted&quot;,&quot;url&quot;:&quot;https://www.google.com/&quot;,&quot;was_proxied&quot;:false},{&quot;failure_data&quot;:{&quot;custom_error&quot;:&quot;net::ERR_ABORTED&quot;},&quot;network_changed&quot;:false,&quot;protocol&quot;:&quot;&quot;,&quot;request_age_ms&quot;:78156,&quot;request_elapsed_ms&quot;:434,&quot;sample_rate&quot;:1.0,&quot;server_ip&quot;:&quot;&quot;,&quot;status&quot;:&quot;aborted&quot;,&quot;url&quot;:&quot;https://www.google.com/&quot;,&quot;was_proxied&quot;:false},{&quot;failure_data&quot;:{&quot;custom_error&quot;:&quot;net::ERR_ABORTED&quot;},&quot;network_changed&quot;:false,&quot;protocol&quot;:&quot;&quot;,&quot;request_age_ms&quot;:77720,&quot;request_elapsed_ms&quot;:341,&quot;sample_rate&quot;:1.0,&quot;server_ip&quot;:&quot;&quot;,&quot;status&quot;:&quot;aborted&quot;,&quot;url&quot;:&quot;https://www.google.com/&quot;,&quot;was_proxied&quot;:false},{&quot;http_response_code&quot;:204,&quot;network_changed&quot;:false,&quot;protocol&quot;:&quot;HTTPS&quot;,&quot;request_age_ms&quot;:74441,&quot;request_elapsed_ms&quot;:1392,&quot;sample_rate&quot;:0.05,&quot;server_ip&quot;:&quot;[::1]:8888&quot;,&quot;status&quot;:&quot;ok&quot;,&quot;url&quot;:&quot;https://www.google.com/&quot;,&quot;was_proxied&quot;:true}],&quot;reporter&quot;:&quot;chrome&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">beacons.gcp.gvt2.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/domainreliability/upload</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="-54" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="viewProduct" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">viewProduct</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="productId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">productId</stringProp>
+                  <stringProp name="Argument.value">${productId}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">petstore.octoperf.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/actions/Catalog.action</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">navigate</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://petstore.octoperf.com/actions/Catalog.action;jsessionid=9E3425F1C011DADD5750FC9F6DB7EBFC</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-User" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                  <stringProp name="Header.value">?1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Google Chrome&quot;;v=&quot;119&quot;, &quot;Chromium&quot;;v=&quot;119&quot;, &quot;Not?A_Brand&quot;;v=&quot;24&quot;</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                  <stringProp name="Header.value">document</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="-48" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;request&quot;:{&quot;@os&quot;:&quot;win&quot;,&quot;@updater&quot;:&quot;chrome&quot;,&quot;acceptformat&quot;:&quot;crx3,puff&quot;,&quot;app&quot;:[{&quot;appid&quot;:&quot;ihnlcenocehgdaegdmhbidjhnhdchfmm&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1::&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{8fb0fb07-8487-4d89-9c75-4f6e32d8708f}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;0.0.0.0&quot;},{&quot;appid&quot;:&quot;oimompecagnajdejgnnjijobebaeigek&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:1zdx:&quot;,&quot;cohortname&quot;:&quot;Chrome 106+&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{7f0c2402-9dfa-4883-8140-d2126a59bcf2}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;4.10.2710.0&quot;},{&quot;appid&quot;:&quot;hnimpnehoodheedghdeeijklkeaacbdc&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1::&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.6f6bc93dcd62dc251850d2ff458fda96083ceb7fbe8eeb11248b8485ef2aea23&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{a9b25142-9182-4bb4-9512-e7b829f88a0c}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;0.57.44.2492&quot;},{&quot;appid&quot;:&quot;lmelglejhemejginpboagddgdfbepgmp&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:lwl:2263@0.5&quot;,&quot;cohortname&quot;:&quot;Auto&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.70038c5037d100135595e4ab2ff64caeb8844cdd03e6408289563fc67f952066&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{262be400-c9c8-4a1e-ac6d-9b33c7d5bf94}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;419&quot;},{&quot;appid&quot;:&quot;gcmjkmgdlgnkkcocmoeiminaijmmjnii&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:bm1:&quot;,&quot;cohortname&quot;:&quot;Stable&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.cd1978742a4afdbaaa15bf712d5c90bef4144caa99024df98f6a9ad58043ae85&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{2ff95462-b486-4413-ac02-4797994b32cb}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;9.49.1&quot;},{&quot;accept_locale&quot;:&quot;ENUS500000&quot;,&quot;appid&quot;:&quot;obedbbhbpmojnkanicioggnmelmoomoc&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:s6f/20ol:20or@0.5&quot;,&quot;cohortname&quot;:&quot;Rollout&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.e0ccf208ccd019c2eec3b24f3d3704a51a5cb57b8d76a946c41915c50e08108c&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{2754f2a7-3747-4c89-ba6c-75d46b7dee50}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;20230923.567854667.14&quot;},{&quot;appid&quot;:&quot;giekcmmlnklenlaomppkphknjmnnpneh&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:j5l:&quot;,&quot;cohortname&quot;:&quot;Auto&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.fd515ec0dc30d25a09641b8b83729234bc50f4511e35ce17d24fd996252eaace&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{dd4eb644-0917-4f40-9ff1-6ee8257810ca}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;7&quot;},{&quot;appid&quot;:&quot;kiabhabjdbkjdpjbpigfodbdjmbglcoo&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:v3l:&quot;,&quot;cohortname&quot;:&quot;Auto&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.d777e561d401292893abda887af337f2d2e9755e47dd4a42402130484d09429b&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{0c3acd3d-ec5e-482a-a5fc-2fcb723a6c92}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;2023.9.4.1&quot;},{&quot;appid&quot;:&quot;khaoiebndkojlmppeemjhbpbandiljpe&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:cux:&quot;,&quot;cohortname&quot;:&quot;Auto&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.a2abb5cf57d3ad529ade67df01567446c6c6a5225b29715119e17c0e0aea6c03&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{9eef07b4-5b46-4351-922b-561423e6a585}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;62&quot;},{&quot;appid&quot;:&quot;hfnkpimlhhgieaddgfemjhofmfblmnib&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:jcl:&quot;,&quot;cohortname&quot;:&quot;Auto&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.ea0a7748126ceb9a11ff0501818454a15034327857f0e6dd2906c98fc97aa1a6&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{05a3d4b8-ba0c-4862-94e5-55efc493ce4f}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;8350&quot;},{&quot;appid&quot;:&quot;llkgjffcdpffmhiakmfcdcblohccpfmo&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1::&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.3e4f959036fef1cae2b1f426864a23f11caae1c96a2816523f2daf4213c3cc73&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{551b55f8-a152-4fd7-acb4-eb8007a4aa47}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;1.0.0.14&quot;},{&quot;appid&quot;:&quot;jflookgnkcckhobaglndicnbbgbonegd&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:s7x:&quot;,&quot;cohortname&quot;:&quot;Auto&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.b915e698d9c9de2569f3089cd387b7dc7e9ba8415f49e838bb8130be31b89ff2&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{9087c7cd-325a-4c35-acb6-75ef5810a7b9}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;3003&quot;},{&quot;appid&quot;:&quot;efniojlnjndmcbiieegkicadnoecjjef&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:18ql:&quot;,&quot;cohortname&quot;:&quot;Auto Stage3&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.8ee63837f1ee150d203c0303892a939907d3ee9ae14f81a72965b6707fad80d5&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{f095596d-5dba-43b9-ac67-0ce076da24d6}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;760&quot;},{&quot;appid&quot;:&quot;ehgidpndbllacpjalkiimkbadgjfnnmc&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:ofl:&quot;,&quot;cohortname&quot;:&quot;stable64&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.a8a79d350c2a5e3bc36226633a8e0bed0dfab184e77f38fc8f0820ebacf8eafc&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{1f339e48-ecb2-4444-9e15-18bac082260c}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;2018.8.8.0&quot;},{&quot;appid&quot;:&quot;ggkkehgbnfjpeggfpleeakpidbkibbmn&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:ut9/1a0f:2133@0.1&quot;,&quot;cohortname&quot;:&quot;M108 and Above&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.b6be680b524ea584c927bafd387e50e0ccbfdcbbbda89fb1e2386f02b9e0d01e&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{ab5babb4-4c59-4065-8e42-86ac334a067a}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;2023.10.13.1141&quot;},{&quot;appid&quot;:&quot;jamhcnnkihinmdlkakkaopbjbbcngflc&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:wvr:209r@0.1&quot;,&quot;cohortname&quot;:&quot;Auto&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.a451a5689ab6b8e94d4392b9908239cafb9736f64539ed9d0574790665a4f2a3&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{dae3b1e6-f2ed-44b6-bb2f-be43a3a60c1d}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;120.0.6046.0&quot;},{&quot;appid&quot;:&quot;ojhpjlocmbogdgmfpkhlaaeamibhnphh&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:w0x:&quot;,&quot;cohortname&quot;:&quot;All users&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.545666a4efd056351597bb386aea1368105ededc976ed5650d8682daab9f37ff&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{37fdd715-6a29-44b3-bb3c-9790604f35df}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;3&quot;},{&quot;appid&quot;:&quot;jflhchccmppkfebkiaminageehmchikm&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:21k3:&quot;,&quot;cohortname&quot;:&quot;Stable&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{260f0017-4fd0-433b-94b5-2996d0fffdfe}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;0.0.0.0&quot;},{&quot;appid&quot;:&quot;laoigpblnllgcgjnjnllmfolckpjlhki&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:10zr:&quot;,&quot;cohortname&quot;:&quot;Auto&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{9d4d1bb4-eaa1-4b39-a63c-b2b29c4a0bef}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;1.0.7.1652906823&quot;},{&quot;appid&quot;:&quot;eeigpngbgcognadeebkilcpcaedhellh&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:w59:&quot;,&quot;cohortname&quot;:&quot;Auto&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.c64c9c1008f3ba5f6e18b3ca524bc98dcd8acfae0a2720a8f1f3ef0f8d643d05&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{b11032d4-eed0-43cc-9bf0-747b005596e8}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;2020.11.2.164946&quot;},{&quot;appid&quot;:&quot;gonpemdgkjcecdgbnaabipppbmgfggbe&quot;,&quot;brand&quot;:&quot;CHBD&quot;,&quot;cohort&quot;:&quot;1:z1x/21wr:21wx@0.5&quot;,&quot;cohortname&quot;:&quot;Rollout&quot;,&quot;enabled&quot;:true,&quot;installdate&quot;:6154,&quot;lang&quot;:&quot;en-US&quot;,&quot;packages&quot;:{&quot;package&quot;:[{&quot;fp&quot;:&quot;1.de7200cb3c40b74bbd3698a9995b35c09394201338caa023feab75f4af51161a&quot;}]},&quot;ping&quot;:{&quot;ping_freshness&quot;:&quot;{43658f4a-8b61-4511-a3ff-1354002fd0e1}&quot;,&quot;rd&quot;:6156},&quot;updatecheck&quot;:{},&quot;version&quot;:&quot;2023.11.2.0&quot;}],&quot;arch&quot;:&quot;x64&quot;,&quot;dedup&quot;:&quot;cr&quot;,&quot;domainjoined&quot;:false,&quot;hw&quot;:{&quot;avx&quot;:true,&quot;physmemory&quot;:16,&quot;sse&quot;:true,&quot;sse2&quot;:true,&quot;sse3&quot;:true,&quot;sse41&quot;:true,&quot;sse42&quot;:true,&quot;ssse3&quot;:true},&quot;ismachine&quot;:true,&quot;nacl_arch&quot;:&quot;x86-64&quot;,&quot;os&quot;:{&quot;arch&quot;:&quot;x86_64&quot;,&quot;platform&quot;:&quot;Windows&quot;,&quot;version&quot;:&quot;10.0.17763.4974&quot;},&quot;prodversion&quot;:&quot;119.0.6045.124&quot;,&quot;protocol&quot;:&quot;3.1&quot;,&quot;requestid&quot;:&quot;{4620b9cb-a579-434e-9e3d-b650be0a0963}&quot;,&quot;sessionid&quot;:&quot;{15c4f42d-2b77-4015-acaa-d67c39f0a513}&quot;,&quot;updater&quot;:{&quot;autoupdatecheckenabled&quot;:true,&quot;ismachine&quot;:true,&quot;lastchecked&quot;:0,&quot;laststarted&quot;:0,&quot;name&quot;:&quot;Omaha&quot;,&quot;updatepolicy&quot;:-1,&quot;version&quot;:&quot;1.3.36.312&quot;},&quot;updaterversion&quot;:&quot;119.0.6045.124&quot;}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">update.googleapis.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/service/update2/json?cup2key=13:RgBVv6QxrZnpso2vXmldEZsGzEsKDtGhp7SZ1_oIye0&amp;cup2hreq=a7bfc846227570fc2d526a945d3f5fcf3c8317f6554c52d185023e56c6cc349a</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">no-cors</stringProp>
+                </elementProp>
+                <elementProp name="X-Goog-Update-AppId" elementType="Header">
+                  <stringProp name="Header.name">X-Goog-Update-AppId</stringProp>
+                  <stringProp name="Header.value">ihnlcenocehgdaegdmhbidjhnhdchfmm,oimompecagnajdejgnnjijobebaeigek,hnimpnehoodheedghdeeijklkeaacbdc,lmelglejhemejginpboagddgdfbepgmp,gcmjkmgdlgnkkcocmoeiminaijmmjnii,obedbbhbpmojnkanicioggnmelmoomoc,giekcmmlnklenlaomppkphknjmnnpneh,kiabhabjdbkjdpjbpigfodbdjmbglcoo,khaoiebndkojlmppeemjhbpbandiljpe,hfnkpimlhhgieaddgfemjhofmfblmnib,llkgjffcdpffmhiakmfcdcblohccpfmo,jflookgnkcckhobaglndicnbbgbonegd,efniojlnjndmcbiieegkicadnoecjjef,ehgidpndbllacpjalkiimkbadgjfnnmc,ggkkehgbnfjpeggfpleeakpidbkibbmn,jamhcnnkihinmdlkakkaopbjbbcngflc,ojhpjlocmbogdgmfpkhlaaeamibhnphh,jflhchccmppkfebkiaminageehmchikm,laoigpblnllgcgjnjnllmfolckpjlhki,eeigpngbgcognadeebkilcpcaedhellh,gonpemdgkjcecdgbnaabipppbmgfggbe</stringProp>
+                </elementProp>
+                <elementProp name="X-Goog-Update-Updater" elementType="Header">
+                  <stringProp name="Header.name">X-Goog-Update-Updater</stringProp>
+                  <stringProp name="Header.value">chrome-119.0.6045.124</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">none</stringProp>
+                </elementProp>
+                <elementProp name="X-Goog-Update-Interactivity" elementType="Header">
+                  <stringProp name="Header.name">X-Goog-Update-Interactivity</stringProp>
+                  <stringProp name="Header.value">bg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                  <stringProp name="Header.value">empty</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>false</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>true</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder" enabled="false">
+        <stringProp name="ProxyControlGui.port">8888</stringProp>
+        <collectionProp name="ProxyControlGui.exclude_list">
+          <stringProp name="1179605444">(?i).*\.(bmp|css|js|gif|ico|jpe?g|png|swf|eot|otf|ttf|mp4|woff|woff2)</stringProp>
+          <stringProp name="-88591710">www\.download\.windowsupdate\.com.*</stringProp>
+          <stringProp name="1206954446">tiles.*\.mozilla\.com.*</stringProp>
+          <stringProp name="-1424663473">.*detectportal\.firefox\.com.*</stringProp>
+          <stringProp name="-1899150273">api\.bing\.com.*</stringProp>
+          <stringProp name="-192420923">.*yimg\.com.*</stringProp>
+          <stringProp name="305776760">(?i).*\.(bmp|css|js|gif|ico|jpe?g|png|swf|eot|otf|ttf|mp4|woff|woff2)[\?;].*</stringProp>
+          <stringProp name="2118375536">www\.google-analytics\.com.*</stringProp>
+          <stringProp name="-1314416226">sqm\.microsoft\.com.*</stringProp>
+          <stringProp name="11072252">.*toolbar\.yahoo\.com.*</stringProp>
+          <stringProp name="1726898318">geo\.yahoo\.com.*</stringProp>
+          <stringProp name="805311387">windowsupdate\.microsoft\.com.*</stringProp>
+          <stringProp name="1658855950">.*toolbar\.live\.com.*</stringProp>
+          <stringProp name="110431874">.*msg\.yahoo\.com.*</stringProp>
+          <stringProp name="1323576868">toolbarqueries\.google\..*</stringProp>
+          <stringProp name="1739087931">http?://self-repair\.mozilla\.org.*</stringProp>
+          <stringProp name="1779943373">us\.update\.toolbar\.yahoo\.com.*</stringProp>
+          <stringProp name="-190610036">.*\.google\.com.*/safebrowsing/.*</stringProp>
+          <stringProp name="-958112859">toolbar\.google\.com.*</stringProp>
+          <stringProp name="-576820688">toolbar\.msn\.com.*</stringProp>
+          <stringProp name="-1435252351">toolbar\.avg\.com/.*</stringProp>
+          <stringProp name="1193216536">update\.microsoft\.com.*</stringProp>
+          <stringProp name="-1279148329">pgq\.yahoo\.com.*</stringProp>
+          <stringProp name="1815174768">safebrowsing.*\.google\.com.*</stringProp>
+          <stringProp name="587935979">g\.msn.*</stringProp>
+          <stringProp name="1629558731">clients.*\.google.*</stringProp>
+        </collectionProp>
+        <collectionProp name="ProxyControlGui.include_list"/>
+        <boolProp name="ProxyControlGui.capture_http_headers">true</boolProp>
+        <intProp name="ProxyControlGui.grouping_mode">4</intProp>
+        <boolProp name="ProxyControlGui.add_assertion">false</boolProp>
+        <stringProp name="ProxyControlGui.sampler_type_name"></stringProp>
+        <boolProp name="ProxyControlGui.sampler_redirect_automatically">false</boolProp>
+        <boolProp name="ProxyControlGui.sampler_follow_redirects">true</boolProp>
+        <boolProp name="ProxyControlGui.use_keepalive">true</boolProp>
+        <boolProp name="ProxyControlGui.sampler_download_images">false</boolProp>
+        <boolProp name="ProxyControlGui.regex_match">true</boolProp>
+        <stringProp name="ProxyControlGui.content_type_include"></stringProp>
+        <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
+        <boolProp name="ProxyControlGui.notify_child_sl_filtered">false</boolProp>
+        <stringProp name="ProxyControlGui.proxy_prefix_http_sampler_name"></stringProp>
+        <intProp name="ProxyControlGui.proxy_http_sampler_naming_mode">1</intProp>
+        <stringProp name="ProxyControlGui.proxy_pause_http_sampler"></stringProp>
+        <boolProp name="ProxyControlGui.detect_graphql_request">true</boolProp>
+        <stringProp name="ProxyControlGui.default_encoding">UTF-8</stringProp>
+      </ProxyControl>
+      <hashTree>
+        <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+          <stringProp name="ConstantTimer.delay">${T}</stringProp>
+          <stringProp name="RandomTimer.range">100.0</stringProp>
+        </UniformRandomTimer>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>true</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>true</responseData>
+              <samplerData>true</samplerData>
+              <xml>true</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>true</responseHeaders>
+              <requestHeaders>true</requestHeaders>
+              <responseDataOnError>true</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <url>true</url>
+              <fileName>true</fileName>
+              <hostname>true</hostname>
+              <threadCounts>true</threadCounts>
+              <sampleCount>true</sampleCount>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">Jpetstorerec1.xml</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
